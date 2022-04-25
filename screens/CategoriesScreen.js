@@ -14,22 +14,15 @@ const renderCategoryItem = (itemData) => {
 
 const CategoriesScreen = () => {
   return (
-    <View style={styles.screen}>
-      <FlatList
-        data={CATEGORIES}
-        keyExtractor={(item) => item.id}
-        renderItem={renderCategoryItem}
-        numColumns={2}
-      />
-    </View>
+    <FlatList
+      data={CATEGORIES}
+      keyExtractor={(item) => item.id}
+      renderItem={renderCategoryItem}
+      numColumns={2}
+    />
   );
 };
 
 export default CategoriesScreen;
 
-const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    marginTop: 40,
-  },
-});
+const styles = StyleSheet.create({});
