@@ -7,5 +7,8 @@ APP React-Native uso de Navegación por pantallas
 # Crear Grid y estilos
 ![Captura](https://user-images.githubusercontent.com/7141537/165127391-8273a9b0-a5ef-4c72-b50c-97726be68e83.PNG)
 
-# Crear Detalles y estilos
+# Crear Lista de Comidas y estilos
 ![Captura](https://user-images.githubusercontent.com/7141537/165164057-dd6c3ae7-fa73-42a6-8b35-0e6754c86c05.PNG)
+
+# Crear Lista de detalles (useNavigation)
+![Captura](https://user-images.githubusercontent.com/7141537/165182707-79091df2-4a12-448a-a81d-2d44f5eb4768.PNG)
