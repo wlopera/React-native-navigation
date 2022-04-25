@@ -1,10 +1,39 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import { FlatList, StyleSheet, View } from "react-native";
+import MealItem from "../components/MealItem";
+import { MEALS } from "../data/dummy-data";
+// import { useRoute } from "@react-navigation/native";
 
-const MealsOverviewScreen = () => {
+const MealsOverviewScreen = ({ route }) => {
+  // Se puede utyilizar el useRoute de "@react-navigation/native o desde el props
+  // const route = useRoute()
+  // const categoryId = route.params.categoryId;
+
+  const categoryId = route.params.categoryId;
+
+  const displayedMeals = MEALS.filter(
+    (mealItem) => mealItem.categoryIds.indexOf(categoryId) >= 0
+  );
+
+  const renderMealItem = (itemData) => {
+    const item = itemData.item;
+
+    const mealItemProps = {
+      title: item.title,
+      imageUrl: item.imageUrl,
+      duration: item.duration,
+      complexity: item.complexity,
+      affordability: item.affordability,
+    };
+    return <MealItem {...mealItemProps} />;
+  };
+
   return (
     <View style={styles.container}>
-      <Text>Pantalla comida...!</Text>
+      <FlatList
+        data={displayedMeals}
+        keyExtractor={(item) => item.id}
+        renderItem={renderMealItem}
+      />
     </View>
   );
 };
