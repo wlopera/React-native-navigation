@@ -52,6 +52,8 @@ const MealDetailsScreen = ({ route, navigation }) => {
   }, [navigation, headerButtonPressHandler]);
 ...
 ```
+![Captura](https://user-images.githubusercontent.com/7141537/165346351-d75fc323-268f-49c3-91f9-627aaf842276.PNG)
+
 
 
 
