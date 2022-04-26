@@ -2,12 +2,53 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Button } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 
 import CategoriesScreen from "./screens/CategoriesScreen";
 import MealsOverviewScreen from "./screens/MealsOverviewScreen";
 import MealDetailsScreen from "./screens/MealDetailsScreen";
+import FavoritesScreen from "./screens/FavoritesScreen";
+import { Ionicons } from "@expo/vector-icons";
 
 const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
+
+// Ccear componente DrawerNavigator
+const DrawerNavigator = () => {
+  return (
+    <Drawer.Navigator
+      screenOptions={{
+        headerStyle: { backgroundColor: "#351401" },
+        headerTintColor: "white",
+        sceneContainerStyle: { backgroundColor: "#3f2f25" },
+        drawerContentStyle: { backgroundColor: "#351401" },
+        drawerInactiveTintColor: "white",
+        drawerActiveTintColor: "#e4baa1",
+      }}
+    >
+      <Drawer.Screen
+        name="Categories"
+        component={CategoriesScreen}
+        options={{
+          title: "Todas las Categorias",
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name="home" color={color} size={size} />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="Favorites"
+        component={FavoritesScreen}
+        options={{
+          title: "Favoritas",
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name="star" color={color} size={size} />
+          ),
+        }}
+      />
+    </Drawer.Navigator>
+  );
+};
 
 export default function App() {
   return (
@@ -22,13 +63,14 @@ export default function App() {
           }}
         >
           <Stack.Screen
-            name="MealsCategories"
-            component={CategoriesScreen}
+            name="Drawer"
+            component={DrawerNavigator}
             options={{
-              title: "Categorias",
+              // title: "Categorias",
               // headerStyle: { backgroundColor: "#351401" },
               // headerTintColor: "white",
               // contentStyle: { backgroundColor: "#3f2f25" },
+              headerShown: false,
             }}
           />
           <Stack.Screen

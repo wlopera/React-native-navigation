@@ -101,4 +101,12 @@ Nota: Se intalo la librería (npm i @expo/vector-icons) por problema con md5-fil
 
 ![Captura](https://user-images.githubusercontent.com/7141537/165361241-cda3f296-c47f-45b5-8e25-90215f6c9f2c.PNG)
 
+## Agregar Navegacion anidada (Stack Navigation - Drawer Navigation)
+* Nota: Se intalo la librería (npm install --save md5-file) por problema con md5-file-promise - Drawer Navigation
+ 
+![Captura](https://user-images.githubusercontent.com/7141537/165404847-d6754ee0-81c2-4619-bc1a-0020be9d6e91.PNG)
+
+![Captura1](https://user-images.githubusercontent.com/7141537/165404841-38eb72ad-5f97-425b-b589-91b6d92ee98e.PNG)
+
+![Captura2](https://user-images.githubusercontent.com/7141537/165404846-f968a5ab-bf9f-4398-9252-94a75c4e9ee6.PNG)
 
