@@ -12,3 +12,6 @@ APP React-Native uso de Navegación por pantallas
 
 # Crear Lista de detalles (useNavigation)
 ![Captura](https://user-images.githubusercontent.com/7141537/165182707-79091df2-4a12-448a-a81d-2d44f5eb4768.PNG)
+
+# Lista de detalles - estilos y componentes
+![Captura](https://user-images.githubusercontent.com/7141537/165339577-ecf65162-eb0b-456f-9482-317ba0cfde81.PNG)
