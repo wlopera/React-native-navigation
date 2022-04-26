@@ -7,6 +7,7 @@ import {
   Text,
   View,
 } from "react-native";
+import IconButton from "../components/IconButton";
 import List from "../components/MealDetail/List";
 import Subtitle from "../components/MealDetail/Subtitle";
 import MealDetails from "../components/MealDetails";
@@ -20,7 +21,14 @@ const MealDetailsScreen = ({ route, navigation }) => {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => {
-        return <Button title="Presióname" onPress={headerButtonPressHandler} />;
+        //return <Button title="Presióname" onPress={headerButtonPressHandler} />;
+        return (
+          <IconButton
+            name="star"
+            color="white"
+            onPress={headerButtonPressHandler}
+          />
+        );
       },
     });
   }, [navigation, headerButtonPressHandler]);
