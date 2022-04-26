@@ -10,9 +10,10 @@ import {
 import { useNavigation } from "@react-navigation/native";
 
 import React from "react";
+import MealDetails from "./MealDetails";
 
 const MealItem = ({
-  id,
+  mealId,
   title,
   imageUrl,
   duration,
@@ -22,8 +23,7 @@ const MealItem = ({
   const navigation = useNavigation();
 
   const selectMailItemHandler = () => {
-    console.log(2222, id);
-    navigation.navigate("MealDetail", { categoryId: id });
+    navigation.navigate("MealDetail", { mealId: mealId });
   };
 
   return (
@@ -38,11 +38,11 @@ const MealItem = ({
             <Image source={{ uri: imageUrl }} style={styles.image} />
             <Text style={styles.text}>{title}</Text>
           </View>
-          <View style={styles.details}>
-            <Text style={styles.detailItem}>{duration} minuto(s)</Text>
-            <Text style={styles.detailItem}>{complexity.toUpperCase()}</Text>
-            <Text style={styles.detailItem}>{affordability.toUpperCase()}</Text>
-          </View>
+          <MealDetails
+            duration={duration}
+            complexity={complexity.toUpperCase()}
+            affordability={affordability.toUpperCase()}
+          />
         </View>
       </Pressable>
     </View>
@@ -79,15 +79,5 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 18,
     margin: 8,
-  },
-  details: {
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 8,
-  },
-  detailItem: {
-    marginHorizontal: 4,
-    fontSize: 12,
   },
 });
