@@ -1,4 +1,4 @@
-import { useLayoutEffect } from "react";
+import { useContext, useLayoutEffect } from "react";
 import {
   Button,
   Image,
@@ -12,10 +12,22 @@ import List from "../components/MealDetail/List";
 import Subtitle from "../components/MealDetail/Subtitle";
 import MealDetails from "../components/MealDetails";
 import { MEALS } from "../data/dummy-data";
+import { FavoritesContext } from "../store/context/favorites-context";
 
 const MealDetailsScreen = ({ route, navigation }) => {
-  const headerButtonPressHandler = () => {
-    console.log("Botón Presionado");
+  const favoriteMealsCtx = useContext(FavoritesContext);
+
+  const mealId = route.params.mealId;
+  const seletedMeal = MEALS.find((meal) => meal.id === mealId);
+
+  const mealIsFavorite = favoriteMealsCtx.ids.includes(mealId);
+
+  const changeFavoriteStatusHandler = () => {
+    if (mealIsFavorite) {
+      favoriteMealsCtx.removeFavorites(mealId);
+    } else {
+      favoriteMealsCtx.addFavorites(mealId);
+    }
   };
 
   useLayoutEffect(() => {
@@ -24,18 +36,14 @@ const MealDetailsScreen = ({ route, navigation }) => {
         //return <Button title="Presióname" onPress={headerButtonPressHandler} />;
         return (
           <IconButton
-            name="star"
+            name={mealIsFavorite ? "star" : "star-outline"}
             color="white"
-            onPress={headerButtonPressHandler}
+            onPress={changeFavoriteStatusHandler}
           />
         );
       },
     });
-  }, [navigation, headerButtonPressHandler]);
-
-  const mealId = route.params.mealId;
-
-  const seletedMeal = MEALS.find((meal) => meal.id === mealId);
+  }, [navigation, changeFavoriteStatusHandler]);
 
   const {
     title,

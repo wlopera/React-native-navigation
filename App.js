@@ -9,6 +9,7 @@ import MealsOverviewScreen from "./screens/MealsOverviewScreen";
 import MealDetailsScreen from "./screens/MealDetailsScreen";
 import FavoritesScreen from "./screens/FavoritesScreen";
 import { Ionicons } from "@expo/vector-icons";
+import FavoritesContextProvider from "./store/context/favorites-context";
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -54,50 +55,52 @@ export default function App() {
   return (
     <>
       <StatusBar style="light" />
-      <NavigationContainer>
-        <Stack.Navigator
-          screenOptions={{
-            headerStyle: { backgroundColor: "#351401" },
-            headerTintColor: "white",
-            contentStyle: { backgroundColor: "#3f2f25" },
-          }}
-        >
-          <Stack.Screen
-            name="Drawer"
-            component={DrawerNavigator}
-            options={{
-              // title: "Categorias",
-              // headerStyle: { backgroundColor: "#351401" },
-              // headerTintColor: "white",
-              // contentStyle: { backgroundColor: "#3f2f25" },
-              headerShown: false,
+      <FavoritesContextProvider>
+        <NavigationContainer>
+          <Stack.Navigator
+            screenOptions={{
+              headerStyle: { backgroundColor: "#351401" },
+              headerTintColor: "white",
+              contentStyle: { backgroundColor: "#3f2f25" },
             }}
-          />
-          <Stack.Screen
-            name="MealsOverview"
-            component={MealsOverviewScreen}
-            options={({ route, navigation }) => {
-              const categoryId = route.params.categoryId;
-              return {
-                title: categoryId,
-              };
-            }}
-          />
-          <Stack.Screen
-            name="MealDetail"
-            component={MealDetailsScreen}
-            options={{
-              title: "Detalles",
-            }}
-            // options={{
-            //   title: "Detalles",
-            //   headerRight: () => {
-            //     return <Button title="Presióname" />;
-            //   },
-            // }}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
+          >
+            <Stack.Screen
+              name="Drawer"
+              component={DrawerNavigator}
+              options={{
+                // title: "Categorias",
+                // headerStyle: { backgroundColor: "#351401" },
+                // headerTintColor: "white",
+                // contentStyle: { backgroundColor: "#3f2f25" },
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="MealsOverview"
+              component={MealsOverviewScreen}
+              options={({ route, navigation }) => {
+                const categoryId = route.params.categoryId;
+                return {
+                  title: categoryId,
+                };
+              }}
+            />
+            <Stack.Screen
+              name="MealDetail"
+              component={MealDetailsScreen}
+              options={{
+                title: "Detalles",
+              }}
+              // options={{
+              //   title: "Detalles",
+              //   headerRight: () => {
+              //     return <Button title="Presióname" />;
+              //   },
+              // }}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </FavoritesContextProvider>
     </>
   );
 }
