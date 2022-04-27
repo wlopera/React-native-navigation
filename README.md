@@ -110,3 +110,20 @@ Nota: Se intalo la librería (npm i @expo/vector-icons) por problema con md5-fil
 
 ![Captura2](https://user-images.githubusercontent.com/7141537/165404846-f968a5ab-bf9f-4398-9252-94a75c4e9ee6.PNG)
 
+## Uso de API Context de React - Agregar listado de favoritas
+![Captura0](https://user-images.githubusercontent.com/7141537/165554593-015a4182-3c3d-4e83-8c64-e12da5c4da6a.PNG)
+
+## Seleccionar Favoritas
+![Captura1](https://user-images.githubusercontent.com/7141537/165554566-6e077530-f64b-445f-af6c-01ae3e0fd5ba.PNG)
+![Captura2](https://user-images.githubusercontent.com/7141537/165554578-851ca98c-a7fa-4d3a-95ca-87429f0ce5c6.PNG)
+
+## Favoritas seleccionadas
+![Captura1-1](https://user-images.githubusercontent.com/7141537/165554576-eb063c7d-7186-40c7-8b53-36338d3b1f53.PNG)
+![Captura2-2](https://user-images.githubusercontent.com/7141537/165554582-6f422964-f4ef-4a13-bb78-a7f479e63a2c.PNG)
+
+## Lista de Favoritas
+![Captura3](https://user-images.githubusercontent.com/7141537/165554586-60822ad9-7587-4e3b-8adf-6f3b56d8ba4a.PNG)
+
+## Mensaje si no posee favoritas
+![Captura](https://user-images.githubusercontent.com/7141537/165554591-1a04650f-d065-4bfe-ac1e-7386365e88ec.PNG)
+

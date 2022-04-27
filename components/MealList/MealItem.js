@@ -10,7 +10,7 @@ import {
 import { useNavigation } from "@react-navigation/native";
 
 import React from "react";
-import MealDetails from "./MealDetails";
+import MealDetails from "../MealDetails";
 
 const MealItem = ({
   mealId,
