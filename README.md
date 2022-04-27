@@ -127,3 +127,9 @@ Nota: Se intalo la librería (npm i @expo/vector-icons) por problema con md5-fil
 ## Mensaje si no posee favoritas
 ![Captura](https://user-images.githubusercontent.com/7141537/165554591-1a04650f-d065-4bfe-ac1e-7386365e88ec.PNG)
 
+## Uso de React - Redux - Agregar listado de favoritas
+![Captura](https://user-images.githubusercontent.com/7141537/165567484-eb94fd74-c3fe-4efa-b88b-84e7c8ced61b.PNG)
+![Captura1](https://user-images.githubusercontent.com/7141537/165567472-6af7472b-503e-479c-81c2-71fc2475e00b.PNG)
+
+
+
